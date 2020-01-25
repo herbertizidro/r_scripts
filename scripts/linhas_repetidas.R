@@ -23,7 +23,7 @@ linhasRepetidas = function(){
   
   #encontrando repetidas gera um arquivo csv
   if(nrow(repetidos) > 0){
-    fwrite(repetidos, file = paste0(output, " - repetido.csv"))
+    fwrite(repetidos, file = paste0(output, " - repetido.csv"), sep = ";")
   }
   #encontrando diferentes gera um arquivo csv
   fwrite(diferentes, file = paste0(output, " - limpo.csv"), sep = ";")
