@@ -21,11 +21,11 @@ linhasRepetidas = function(){
   #ex: x = "nome.csv" -> x = "nome", "csv"
   output = str_split(nome_arquivo, "\\.")[[1]][1]
   
-  #encontrando repetidas gera um arquivo csv
+  #encontrando repetidas gera dois arquivos csv: um só de linhas repetidas e outro só de linhas diferentes 
   if(nrow(repetidos) > 0){
     fwrite(repetidos, file = paste0(output, " - repetido.csv"), sep = ";")
     fwrite(diferentes, file = paste0(output, " - limpo.csv"), sep = ";")
-  }else{print("Tudo OK! =]")}
+  }else{cat("Tudo OK! =]")}
 
 }
 
