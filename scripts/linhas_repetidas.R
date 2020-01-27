@@ -7,10 +7,10 @@ linhasRepetidas = function(){
   
   #escolhe o diretório do script como diretório de busca do arquivo csv
   setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-  #cria vetor com o nome de todos os arquivos csv da pasta atual
-  files = file.info(list.files(getwd(), pattern = ".csv"))
+  #cria vetor com o nome de todos os arquivos csv do diretório
+  arquivos_dir = file.info(list.files(getwd(), pattern = ".csv"))
   #carrega o arquivo mais recente
-  nome_arquivo = rownames(files)[order(files$mtime)][nrow(files)]
+  nome_arquivo = rownames(arquivos_dir)[order(arquivos_dir$mtime)][nrow(arquivos_dir)]
   DF = fread(nome_arquivo, fill = TRUE)
   #acha as linhas diferentes e repetidas
   diferentes = distinct(DF)
