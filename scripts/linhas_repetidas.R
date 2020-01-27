@@ -1,4 +1,5 @@
 
+
 if("pacman" %in% rownames(installed.packages()) == FALSE) {install.packages("pacman")}
 pacman::p_load(data.table, stringr, dplyr)
 
@@ -25,8 +26,8 @@ linhasRepetidas = function(){
   if(nrow(repetidos) > 0){
     fwrite(repetidos, file = paste0(output, " - repetido.csv"), sep = ";")
     fwrite(diferentes, file = paste0(output, " - limpo.csv"), sep = ";")
-  }else{cat("Tudo OK! =]")}
-
+  }else{cat(paste0("Tudo OK com '", output, ".csv' =]"))}
+  
 }
 
 
