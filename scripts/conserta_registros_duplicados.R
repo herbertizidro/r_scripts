@@ -16,7 +16,7 @@ library('gtools')
 # não necessariamente o ano de 2009 está incorreto nesses casos
 
 
-ibge = read_excel("População IBGE - UF - Municípios (2009 a 2020) - corrigido.xlsx")
+ibge = read_excel("ibge.xlsx")
 ibge = as.data.frame(ibge)
 names(ibge)[4] = "COD.MUNIC"
 
@@ -47,4 +47,4 @@ for (i in 1:length(mun_repetidos)) {
 }
 
 
-write_excel(ibge, "População IBGE - UF - Municípios (2009 a 2020).xlsx")
+write_excel(ibge, "População IBGE - UF - Municípios (2009 a 2020) - corrigido.xlsx")
