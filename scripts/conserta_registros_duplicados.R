@@ -24,8 +24,6 @@ mun_repetidos = read_excel("duplicados.xlsx")
 mun_repetidos = as.data.frame(mun_repetidos$NM_MUNICIPIO)
 mun_repetidos = unique(mun_repetidos$`mun_repetidos$NM_MUNICIPIO`)
 
-aux = c()
-  
 for (i in 1:length(mun_repetidos)) {
   
   # coleta o código que se repete entre 2011 e 2020
