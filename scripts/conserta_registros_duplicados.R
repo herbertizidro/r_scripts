@@ -32,7 +32,8 @@ for (i in 1:length(mun_repetidos)) {
   # se for mais de um código, então temos mais de um município com o mesmo nome, ex: Caraúbas - PB e Caraúbas - RN
   if(length(codigo) == 1){
     # filtra pelo município, modifica todos os registros da coluna COD.MUNIC para o código correto
-    #sendo assim, o ano de 2009 passa a ter o mesmo código dos outros anos
+    # sendo assim, o ano de 2009 passa a ter o mesmo código dos outros anos
+    # se o município for X, altera os valores da coluna COD.MUNIC para o código coletado anteriormente
     ibge = ibge %>% mutate(COD.MUNIC = ifelse(`NOME DO MUNICÍPIO` == mun_repetidos[i], codigo, COD.MUNIC))
   }else{
     #parte ainda por fazer - por enquanto só informa os poucos municípios que restaram para consertar
