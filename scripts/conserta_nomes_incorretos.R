@@ -37,5 +37,12 @@ for (i in 1:length(unique(codigo_municipio$Município))) {
   
 }
 
+# remove linhas duplicadas
+ibge = distinct(ibge)
+
+# alguns municípios ficaram sem o valor de POPULAÇÃO ESTIMADA no ano de 2010
+# isso ocorreu por conta dos nomes diferentes mas foram poucos, consertei manualmente
+NA_posicoes = which(is.na(ibge$`POPULAÇÃO ESTIMADA`))
 
 write_xlsx(ibge, "População IBGE 2009-2010 - FINAL.xlsx")
+
